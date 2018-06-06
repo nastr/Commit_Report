@@ -1,0 +1,21 @@
+::ng-deep .mat-sort-header-container {
+  display: flex;
+  justify-content: center;
+}
+
+.wrap {
+  width: 100%;
+}
+
+.floatleft {
+  float: left;
+  width: 50%;
+  /*height: 400px;*/
+}
+
+.floatright {
+  vertical-align: auto;
+  float: right;
+  /*height: 400px;*/
+  width: 50%;
+}
