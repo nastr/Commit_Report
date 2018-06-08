@@ -1,4 +1,59 @@
-<button mat-icon-button routerLink="/"><mat-icon>home</mat-icon></button>
-<p>
-  admin works!
-</p>
+<button mat-icon-button routerLink="/">
+  <mat-icon>home</mat-icon>
+</button>
+<mat-accordion>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>Repositories</mat-panel-title>
+    </mat-expansion-panel-header>
+
+    <table>
+      <thead>
+      <tr>
+        <th>NAME</th>
+        <th>TYPE</th>
+        <th>
+          <button mat-icon-button (click)="addRepo()">
+            <mat-icon>playlist_add</mat-icon>
+          </button>
+        </th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let repo of repos">
+        <td>{{repo.name}}</td>
+        <td>{{repo.type}}</td>
+        <td>
+          <button mat-icon-button (click)="editRepo(repo.id, repo.name, repo.type)">
+            <mat-icon>edit</mat-icon>
+          </button>
+          <button mat-icon-button (click)="deleteRepo(repo)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </mat-expansion-panel>
+
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>Credentials</mat-panel-title>
+    </mat-expansion-panel-header>
+
+    <form class="example-form">
+      <mat-form-field class="example-full-width" *ngFor="let cred of credentials">
+        <div style="float: left;">
+          <input matInput #titleInput placeholder="{{cred.name}}" value="{{cred.value}}">
+        </div>
+        <div style="float: right;">
+          <button mat-icon-button (click)="saveProperty(cred, titleInput.value)">
+            <mat-icon>save</mat-icon>
+          </button>
+        </div>
+      </mat-form-field>
+    </form>
+
+  </mat-expansion-panel>
+
+</mat-accordion>

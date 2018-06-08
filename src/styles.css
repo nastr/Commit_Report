@@ -5,3 +5,16 @@ table {
   border: 1px solid black;
   text-align: center;
 }
+
+.floatleft {
+  float: left;
+  width: 50%;
+  /*height: 400px;*/
+}
+
+.floatright {
+  vertical-align: auto;
+  float: right;
+  /*height: 400px;*/
+  width: 50%;
+}

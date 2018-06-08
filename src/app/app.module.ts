@@ -5,8 +5,21 @@ import {AppComponent} from './app.component';
 import {Ng2GoogleChartsModule} from 'ng2-google-charts';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {
-  MatButtonModule, MatDialogModule, MatInputModule, MatPaginatorModule, MatSortModule, MatIconModule,
-  MatTableModule, MatTabsModule, MatToolbarModule, MatCardModule, MatFormFieldModule, MatRadioModule,
+  MatButtonModule,
+  MatDialogModule,
+  MatInputModule,
+  MatPaginatorModule,
+  MatSortModule,
+  MatIconModule,
+  MatTableModule,
+  MatTabsModule,
+  MatToolbarModule,
+  MatCardModule,
+  MatFormFieldModule,
+  MatRadioModule,
+  MatListModule,
+  MatExpansionModule,
+  MatSelectModule,
 } from '@angular/material';
 import {ReleaseComponent} from './release/release.component';
 import {HttpClientModule} from '@angular/common/http';
@@ -30,6 +43,10 @@ import {CommitsService} from './release/commit/commits.service';
 import {JirasService} from './release/jira/jiras.service';
 import {BranchesService} from './release/branch/branches.service';
 import {AdminComponent} from './admin/admin.component';
+import {CredentialsService} from './admin/credentials.service';
+import {RepositoriesService} from './admin/repositories.service';
+import {AddRepoDialogComponent} from './admin/addRepo/add-repo.dialog.component';
+import {EditRepoDialogComponent} from './admin/editRepo/edit-repo.dialog.component';
 
 const routes: Routes = [
   {path: '', component: MainComponent},
@@ -52,7 +69,9 @@ const routes: Routes = [
     CorrectionComponent,
     CommitComponent,
     JiraComponent,
-    AdminComponent
+    AdminComponent,
+    AddRepoDialogComponent,
+    EditRepoDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -71,6 +90,9 @@ const routes: Routes = [
     MatCardModule,
     MatFormFieldModule,
     MatRadioModule,
+    MatListModule,
+    MatExpansionModule,
+    MatSelectModule,
     ReactiveFormsModule,
     Ng2GoogleChartsModule,
     RouterModule.forRoot(
@@ -82,10 +104,12 @@ const routes: Routes = [
     AddDialogComponent,
     EditDialogComponent,
     DeleteDialogComponent,
-    JustifyDialogComponent
+    JustifyDialogComponent,
+    AddRepoDialogComponent,
+    EditRepoDialogComponent
   ],
   providers: [ReleasesService, DashboardTableService, DashboardSummaryService, CorrectionsService,
-    CommitsService, JirasService, BranchesService],
+    CommitsService, JirasService, BranchesService, RepositoriesService, CredentialsService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

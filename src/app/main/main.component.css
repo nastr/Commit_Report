@@ -31,18 +31,16 @@
   margin-top: 8px;
 }
 
-.parent
-{
-  width:40px;
-  height:40px;
-  border: darkblue solid 7px;
-  float:left;
-}
-
-.child
-{
+.parent {
   width: 40px;
   height: 40px;
-  background:darkblue;
-  transform: rotateX(75deg) rotateY(-230deg)   skewX(-20deg);
+  border: darkblue solid 7px;
+  float: left;
+}
+
+.child {
+  width: 40px;
+  height: 40px;
+  background: darkblue;
+  transform: rotateX(75deg) rotateY(-230deg) skewX(-20deg);
 }

@@ -48,6 +48,10 @@ export class MainComponent implements OnInit {
     // this.selectedRelease = null;
   }
 
+  generate() {
+    console.log('to be implemented');
+  }
+
   addNew(model: ReleaseModel) {
     const dialogRef = this.dialog.open(AddDialogComponent, {
       data: {issue: model}
@@ -63,10 +67,6 @@ export class MainComponent implements OnInit {
   }
 
   startEdit(i: number, jira_version: string, status: string, description: string, updated: string) {
-    // this.id = id;
-    // index row is used just for debugging proposes and can be removed
-    // this.index = i;
-    // console.log(this.index);
     const dialogRef = this.dialog.open(EditDialogComponent, {
       data: {jira_version: jira_version, status: status, description: description, updated: updated}
     });

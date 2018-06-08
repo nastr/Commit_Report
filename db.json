@@ -1,4 +1,88 @@
 {
+  "credentials": [
+    {
+      "id": 0,
+      "name": "git.username",
+      "value": ""
+    },
+    {
+      "id": 1,
+      "name": "git.password",
+      "value": ""
+    },
+    {
+      "id": 2,
+      "name": "git.url",
+      "value": ""
+    },
+    {
+      "id": 3,
+      "name": "svn.username",
+      "value": ""
+    },
+    {
+      "id": 4,
+      "name": "svn.password",
+      "value": ""
+    },
+    {
+      "id": 5,
+      "name": "svn.url",
+      "value": ""
+    },
+    {
+      "id": 6,
+      "name": "jira.username",
+      "value": ""
+    },
+    {
+      "id": 7,
+      "name": "jira.password",
+      "value": ""
+    },
+    {
+      "id": 8,
+      "name": "jira.url",
+      "value": ""
+    },
+    {
+      "id": 9,
+      "name": "jira.projects",
+      "value": ""
+    },
+    {
+      "id": 10,
+      "name": "proxy",
+      "value": "host:port"
+    },
+    {
+      "id": 11,
+      "name": "sharepoint.username",
+      "value": ""
+    },
+    {
+      "id": 12,
+      "name": "sharepoint.password",
+      "value": "domain\\username"
+    },
+    {
+      "id": 13,
+      "name": "excel.source.file.path",
+      "value": ""
+    }
+  ],
+  "repos": [
+    {
+      "id": 0,
+      "name": "some",
+      "type": "svn"
+    },
+    {
+      "id": 1,
+      "name": "anyname",
+      "type": "svn"
+    }
+  ],
   "branches": [
     {
       "repository_name": "repository1",
