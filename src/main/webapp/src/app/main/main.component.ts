@@ -54,7 +54,7 @@ export class MainComponent implements OnInit {
 
   addNew(model: ReleaseModel) {
     const dialogRef = this.dialog.open(AddDialogComponent, {
-      data: {issue: model}
+      data: {model: model}
     });
     dialogRef.afterClosed().subscribe(result => {
       if (result === 1) {

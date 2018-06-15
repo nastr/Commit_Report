@@ -58,9 +58,9 @@ export class AdminComponent implements OnInit {
     }
   }
 
-  addRepo(model: RepositoryModel) {
+  addRepo(repo: RepositoryModel) {
     const dialogRef = this.dialog.open(AddRepoDialogComponent, {
-      data: {id: model.id, name: model.name, type: model.type}
+      data: {repo: repo}
     });
     dialogRef.afterClosed().subscribe(result => {
         if (result === 1) {

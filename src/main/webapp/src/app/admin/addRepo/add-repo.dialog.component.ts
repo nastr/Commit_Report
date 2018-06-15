@@ -17,7 +17,7 @@ export class AddRepoDialogComponent {
   ];
   selectedValue: string;
 
-  constructor(public dialogRef: MatDialogRef<RepositoryModel>,
+  constructor(public dialogRef: MatDialogRef<AddRepoDialogComponent>,
               @Inject(MAT_DIALOG_DATA) public data: RepositoryModel,
               public dataService: RepositoriesService) {
   }

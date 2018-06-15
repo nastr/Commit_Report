@@ -14,7 +14,7 @@
 
     <div class="form">
       <mat-form-field>
-        <mat-select placeholder="Type" [(ngModel)]="selectedType" name="Type">
+        <mat-select placeholder="Type" [(ngModel)]="selectedTypeIndex" name="Type">
           <mat-option *ngFor="let type of repoType; let i = index;" [value]="i">
             {{type.viewValue}}
           </mat-option>

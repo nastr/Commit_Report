@@ -1,9 +1,7 @@
-import {MAT_DIALOG_DATA, MatDialogRef, MatOptionSelectionChange} from '@angular/material';
+import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material';
 import {Component, Inject} from '@angular/core';
 import {FormControl, Validators} from '@angular/forms';
 import {RepositoriesService} from '../repositories.service';
-import {RepositoryModel} from '../repository.model';
-import {st} from '@angular/core/src/render3';
 
 @Component({
   selector: 'app-edit-repo.dialog',
@@ -16,12 +14,13 @@ export class EditRepoDialogComponent {
     {value: 'svn', viewValue: 'SVN'}
   ];
   selectedName: string;
-  selectedType: number;
+  selectedTypeIndex: number;
 
   constructor(public dialogRef: MatDialogRef<EditRepoDialogComponent>,
               @Inject(MAT_DIALOG_DATA) public data: any,
               public dataService: RepositoriesService) {
     this.selectedName = this.data.name;
+    this.selectedTypeIndex = this.data.type;
     // console.log(this.data.type);
   }
 
@@ -41,7 +40,7 @@ export class EditRepoDialogComponent {
 
   stopEdit(): void {
     this.data.name = this.selectedName;
-    this.data.type = this.repoType[this.selectedType].value;
+    this.data.type = this.repoType[this.selectedTypeIndex].value;
     // console.log(this.data);
     this.dataService.update(this.data).subscribe();
   }
