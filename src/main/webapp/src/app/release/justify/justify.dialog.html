@@ -1,0 +1,25 @@
+<div class="container">
+    <h3 mat-dialog-title>Please provide Justification</h3>
+    <div mat-dialog-content>
+        commits revision: {{correctionRow.commitsRevision}}
+        <p></p>
+        repository name: {{correctionRow.repositoryName}}
+        <p></p>
+        Author: {{correctionRow.justificationAuthor}}
+        <p></p>
+    </div>
+
+    <div class="form">
+        <mat-form-field color="accent">
+      <textarea matInput #input class="form-control" placeholder="Justify" [(ngModel)]="_justification"
+                name="Justify" minlength="10" required></textarea>
+            <mat-error *ngIf="formControl.invalid">{{getErrorMessage()}}</mat-error>
+            <mat-hint align="end">{{input.value?.length || 0}}/10</mat-hint>
+        </mat-form-field>
+    </div>
+
+    <div mat-dialog-actions>
+        <button mat-button [mat-dialog-close]="1" (click)="confirmJustification()">Save</button>
+        <button mat-button (click)="onNoClick()" tabindex="-1">Cancel</button>
+    </div>
+</div>

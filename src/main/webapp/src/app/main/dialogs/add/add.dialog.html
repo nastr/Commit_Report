@@ -2,30 +2,28 @@
   <h3 mat-dialog-title>Add new Issue</h3>
 
   <form class="mat-dialog-content" (ngSubmit)="submit" #formControl="ngForm">
-
-    <!--Textarea for demo purposes-->
-    <div class="form">
-      <mat-form-field color="accent">
-        <textarea matInput #input class="form-control" placeholder="release_name"
-                  [(ngModel)]="data.jira_version" name="release_name" required></textarea>
-        <mat-error *ngIf="formControl.invalid">{{getErrorMessage()}}</mat-error>
-      </mat-form-field>
-    </div>
-
     <!--Contains mat-hint for characters count and has maxLengt set-->
-    <div class="form">
+    <!--<div class="form">
       <mat-form-field color="accent">
         <input matInput #inputstate class="form-control" placeholder="Status"
                [(ngModel)]="data.status" name="status" maxlength="10" required>
         <mat-error *ngIf="formControl.invalid">{{getErrorMessage()}}</mat-error>
         <mat-hint align="end">{{inputstate.value?.length || 0}}/10</mat-hint>
       </mat-form-field>
-    </div>
+    </div>-->
 
     <div class="form">
       <mat-form-field color="accent">
         <textarea matInput #input class="form-control" placeholder="jira_version"
-                  [(ngModel)]="data.description" name="jira_version" required></textarea>
+                  [(ngModel)]="data.jira_version" name="jira_version" required></textarea>
+        <mat-error *ngIf="formControl.invalid">{{getErrorMessage()}}</mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="form">
+      <mat-form-field color="accent">
+        <textarea matInput #input class="form-control" placeholder="release_name"
+                  [(ngModel)]="data.release_name" name="release_name" required></textarea>
         <mat-error *ngIf="formControl.invalid">{{getErrorMessage()}}</mat-error>
       </mat-form-field>
     </div>

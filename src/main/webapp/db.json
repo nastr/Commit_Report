@@ -1,4 +1,11 @@
 {
+  "actions": [
+    {
+      "jira_version": "18-02",
+      "action": "generate",
+      "id": 1
+    }
+  ],
   "credentials": [
     {
       "id": 0,
@@ -135,18 +142,16 @@
       "jira_version": "18-02"
     }
   ],
-  "dashboardSummary": [
-    {
-      "id": 0,
-      "in_scope": 58,
-      "not_in_scope": 45,
-      "planned": 0,
-      "justified": 26,
-      "no_jira": 23,
-      "invalid_jira": 1,
-      "jira_version": "18-02"
-    }
-  ],
+  "dashboardSummary": {
+    "id": 0,
+    "in_scope": 58,
+    "not_in_scope": 45,
+    "planned": 0,
+    "justified": 26,
+    "no_jira": 23,
+    "invalid_jira": 1,
+    "jira_version": "18-02"
+  },
   "dashboardTable": [
     {
       "id": 0,
@@ -201,40 +206,26 @@
       "jira_version": "18-02"
     }
   ],
-  "releases": [
+  "reports": [
     {
       "id": 0,
       "jira_version": "18-01",
       "status": "in progress",
-      "description": "mont1 release",
+      "release_name": "mont1 release",
       "updated": 1528279872993
     },
     {
       "id": 1,
       "jira_version": "18-02",
       "status": "complete",
-      "description": "mont1 release",
-      "updated": 1528279872993
-    },
-    {
-      "id": 2,
-      "jira_version": "18-03",
-      "status": "test",
-      "description": "mont1 release",
-      "updated": 1528279872993
-    },
-    {
-      "id": 3,
-      "jira_version": "18-04",
-      "status": "test",
-      "description": "mont1 release",
+      "release_name": "mont1 release",
       "updated": 1528279872993
     },
     {
       "id": 4,
       "jira_version": "18-05",
       "status": "test",
-      "description": "mont1 release",
+      "release_name": "mont1 release",
       "updated": 1528279872993
     }
   ]
