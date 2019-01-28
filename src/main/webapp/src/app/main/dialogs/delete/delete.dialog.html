@@ -1,20 +1,18 @@
 <div class="container">
-  <h3 mat-dialog-title>Are you sure?</h3>
-  <div mat-dialog-content>
-    <!--Id: {{data.release_id}}
-    <p></p>-->
-    release_name: {{data.jira_version}}
-    <p></p>
-    status: {{data.status}}
-    <p></p>
-    jira_version: {{data.description}}
-    <p></p>
-    updated: {{data.updated}}
-    <p></p>
-  </div>
+    <h3 mat-dialog-title>Are you sure?</h3>
+    <div mat-dialog-content>
+        jira_version: {{data.jira_version}}
+        <p></p>
+        release_name: {{data.release_name}}
+        <p></p>
+        status: {{data.status}}
+        <p></p>
+        updated: {{data.updated | date:'yyyy-MM-dd HH:mm:ssZ'}}
+        <p></p>
+    </div>
 
-  <div mat-dialog-actions>
-    <button mat-button [mat-dialog-close]="1" (click)="confirmDelete()">Delete</button>
-    <button mat-button (click)="onNoClick()" tabindex="-1">Cancel</button>
-  </div>
+    <div mat-dialog-actions>
+        <button mat-button [mat-dialog-close]="1" (click)="confirmDelete()">Delete</button>
+        <button mat-button (click)="onNoClick()" tabindex="-1">Cancel</button>
+    </div>
 </div>
