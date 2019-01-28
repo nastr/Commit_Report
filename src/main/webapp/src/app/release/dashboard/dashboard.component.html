@@ -1,0 +1,104 @@
+<div class="floatleft">
+  <google-chart #chart [data]="chartData">
+  </google-chart>
+</div>
+<div class="floatright">
+  <table title="Artifacts status" class="table-of-contents">
+    <tr>
+      <td>In scope</td>
+      <td>{{summary.in_scope}}</td>
+    </tr>
+    <tr>
+      <td>Not in scope</td>
+      <td>{{summary.not_in_scope}}</td>
+    </tr>
+    <tr>
+      <td>Planned</td>
+      <td>{{summary.planned}}</td>
+    </tr>
+    <tr>
+      <td>Justified</td>
+      <td>{{summary.justified}}</td>
+    </tr>
+    <tr>
+      <td>No JIRA</td>
+      <td>{{summary.no_jira}}</td>
+    </tr>
+    <tr>
+      <td>Invalid JIRA</td>
+      <td>{{summary.invalid_jira}}</td>
+    </tr>
+    <tr>
+      <td>Total</td>
+      <td>{{summary.in_scope + summary.not_in_scope + summary.planned +
+        summary.justified + summary.no_jira + summary.invalid_jira}}
+      </td>
+    </tr>
+  </table>
+</div>
+
+<table mat-table #table [dataSource]="tableSource" matSort
+       matSortActive="jira_version" matSortDirection="asc" matSortDisableClear>
+  <!-- actions -->
+  <ng-container matColumnDef="actions">
+    <th mat-header-cell *matHeaderCellDef>ACTIONS</th>
+    <td mat-cell *matCellDef="let row; let i=index;">
+      <button mat-icon-button color="accent"
+              (click)="justify(i, row.commits_revision, row.repository_name,
+               row.jira_artifact, row.jira_title, row.jira_version)">
+        <mat-icon>launch</mat-icon>
+      </button>
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="commits_revision">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>COMMITS_REVISION</th>
+    <td mat-cell *matCellDef="let row">{{row.commits_revision}}</td>
+  </ng-container>
+  <ng-container matColumnDef="repository_name">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>REPOSITORY_NAME</th>
+    <td mat-cell *matCellDef="let row">{{row.repository_name}}</td>
+  </ng-container>
+  <ng-container matColumnDef="commits_message">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>COMMITS_MESSAGE</th>
+    <td mat-cell *matCellDef="let row">{{row.commits_message}}</td>
+  </ng-container>
+  <ng-container matColumnDef="commits_authors">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>COMMITS_AUTHORS</th>
+    <td mat-cell *matCellDef="let row">{{row.commits_authors}}</td>
+  </ng-container>
+  <ng-container matColumnDef="jira_artifact">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>JIRA_ARTIFACT</th>
+    <td mat-cell *matCellDef="let row">{{row.jira_artifact}}</td>
+  </ng-container>
+  <ng-container matColumnDef="jira_title">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>JIRA_TITLE</th>
+    <td mat-cell *matCellDef="let row">{{row.jira_title}}</td>
+  </ng-container>
+  <ng-container matColumnDef="jira_parent_artifact">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>JIRA_PARENT_ARTIFACT</th>
+    <td mat-cell *matCellDef="let row">{{row.jira_parent_artifact}}</td>
+  </ng-container>
+  <ng-container matColumnDef="jira_type">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>JIRA_TYPE</th>
+    <td mat-cell *matCellDef="let row">{{row.jira_type}}</td>
+  </ng-container>
+  <ng-container matColumnDef="scope">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>SCOPE</th>
+    <td mat-cell *matCellDef="let row">{{row.scope}}</td>
+  </ng-container>
+  <ng-container matColumnDef="jira_version">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>jira_version</th>
+    <td mat-cell *matCellDef="let row">{{row.jira_version}}</td>
+  </ng-container>
+  <tr mat-header-row *matHeaderRowDef="tableColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: tableColumns;">
+  </tr>
+</table>
+
+<mat-paginator #paginator
+               [length]="0"
+               [pageIndex]="0"
+               [pageSize]="10"
+               [pageSizeOptions]="[5, 10, 25, 100]">
+</mat-paginator>

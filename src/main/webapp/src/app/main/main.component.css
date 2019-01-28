@@ -1,0 +1,46 @@
+.href:hover {
+  text-decoration: underline;
+  color: blue;
+  cursor: pointer;
+  background-color: aliceblue;
+}
+
+::ng-deep .mat-sort-header-container {
+  display: flex;
+  justify-content: center;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.form {
+  min-height: 56px;
+  max-height: 56px;
+  display: flex;
+  align-items: center;
+  padding: 8px 24px 0;
+  font-size: 20px;
+  justify-content: space-between;
+  border-bottom: 1px solid transparent;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  flex-grow: 1;
+  margin-top: 8px;
+}
+
+.parent {
+  width: 40px;
+  height: 40px;
+  border: darkblue solid 7px;
+  float: left;
+}
+
+.child {
+  width: 40px;
+  height: 40px;
+  background: darkblue;
+  transform: rotateX(75deg) rotateY(-230deg) skewX(-20deg);
+}

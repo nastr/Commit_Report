@@ -1,0 +1,28 @@
+<div>
+  <button mat-icon-button routerLink="/"><mat-icon>home</mat-icon></button>
+  <button mat-icon-button><mat-icon>play_arrow</mat-icon></button>
+  <button mat-icon-button [disabled]="!isGenerated"><mat-icon>get_app</mat-icon></button>
+  <span>{{jira_version}}</span>
+</div>
+
+<mat-tab-group (selectedTabChange)="onTabChanged($event)">
+  <mat-tab label="Dashboard" *ngIf="isGenerated">
+    <app-dashboard></app-dashboard>
+  </mat-tab>
+  <mat-tab label="Branches">
+    <app-branch></app-branch>
+  </mat-tab>
+  <mat-tab label="Correction" *ngIf="isGenerated">
+    <app-correction></app-correction>
+  </mat-tab>
+  <mat-tab label="Commit" *ngIf="isGenerated">
+    <app-commit></app-commit>
+  </mat-tab>
+  <mat-tab label="JIRA" *ngIf="isGenerated">
+    <app-jira></app-jira>
+  </mat-tab>
+</mat-tab-group>
+
+
+
+

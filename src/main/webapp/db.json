@@ -1,0 +1,241 @@
+{
+  "credentials": [
+    {
+      "id": 0,
+      "name": "git.username",
+      "value": ""
+    },
+    {
+      "id": 1,
+      "name": "git.password",
+      "value": ""
+    },
+    {
+      "id": 2,
+      "name": "git.url",
+      "value": ""
+    },
+    {
+      "id": 3,
+      "name": "svn.username",
+      "value": ""
+    },
+    {
+      "id": 4,
+      "name": "svn.password",
+      "value": ""
+    },
+    {
+      "id": 5,
+      "name": "svn.url",
+      "value": ""
+    },
+    {
+      "id": 6,
+      "name": "jira.username",
+      "value": ""
+    },
+    {
+      "id": 7,
+      "name": "jira.password",
+      "value": ""
+    },
+    {
+      "id": 8,
+      "name": "jira.url",
+      "value": ""
+    },
+    {
+      "id": 9,
+      "name": "jira.projects",
+      "value": ""
+    },
+    {
+      "id": 10,
+      "name": "proxy",
+      "value": "host:port"
+    },
+    {
+      "id": 11,
+      "name": "sharepoint.username",
+      "value": ""
+    },
+    {
+      "id": 12,
+      "name": "sharepoint.password",
+      "value": "domain\\username"
+    },
+    {
+      "id": 13,
+      "name": "excel.source.file.path",
+      "value": ""
+    }
+  ],
+  "repos": [
+    {
+      "id": 0,
+      "name": "some",
+      "type": "svn"
+    },
+    {
+      "id": 1,
+      "name": "anyname",
+      "type": "svn"
+    }
+  ],
+  "branches": [
+    {
+      "repository_name": "repository1",
+      "path": "branch/name",
+      "trusted_base_line": "123",
+      "current_base_line": "456"
+    }
+  ],
+  "commits": [
+    {
+      "id": 0,
+      "revision": "a3aac1bc83e4987892b00f075eccd9ad76178483",
+      "author": "user 1",
+      "date": 1528279872993,
+      "message": "commit message",
+      "artifact": "",
+      "svn_path": "repository name",
+      "artf_calc": "jirakey-1",
+      "release": "18-02",
+      "type": "branch/name"
+    }
+  ],
+  "jiras": [
+    {
+      "id": 0,
+      "key": "jirakey-1",
+      "title": "jira sumary",
+      "type": "Sub-task",
+      "status": "Closed",
+      "assignee": "user 1",
+      "reporter": "user 2",
+      "parent": "jirakey-0",
+      "sub_task": "",
+      "affects_versions": "18-02",
+      "fix_versions": "18-03",
+      "sprint": "18-04"
+    }
+  ],
+  "corrections": [
+    {
+      "id": 0,
+      "commits_revision": "jirakey-123",
+      "repository_name": "jirakey-123",
+      "jira_artifact": "jirakey-123",
+      "jira_title": "jirakey-123",
+      "justification": "Merge commit auto-justfied",
+      "status": "Green",
+      "date": 1528279872993,
+      "author": "script",
+      "jira_version": "18-02"
+    }
+  ],
+  "dashboardSummary": [
+    {
+      "id": 0,
+      "in_scope": 58,
+      "not_in_scope": 45,
+      "planned": 0,
+      "justified": 26,
+      "no_jira": 23,
+      "invalid_jira": 1,
+      "jira_version": "18-02"
+    }
+  ],
+  "dashboardTable": [
+    {
+      "id": 0,
+      "commits_revision": "1",
+      "repository_name": "stress",
+      "commits_message": "some commit title",
+      "commits_authors": "user name",
+      "jira_artifact": "jirakey2",
+      "jira_title": "some jira title",
+      "jira_parent_artifact": "jirakey1",
+      "jira_type": "Sub-task",
+      "scope": "not in scope",
+      "jira_version": "18-02"
+    },
+    {
+      "id": 1,
+      "commits_revision": "1",
+      "repository_name": "stress",
+      "commits_message": "some commit title",
+      "commits_authors": "user name",
+      "jira_artifact": "jirakey2",
+      "jira_title": "some jira title",
+      "jira_parent_artifact": "jirakey1",
+      "jira_type": "Sub-task",
+      "scope": "not in scope",
+      "jira_version": "18-02"
+    },
+    {
+      "id": 2,
+      "commits_revision": "1",
+      "repository_name": "stress",
+      "commits_message": "some commit title",
+      "commits_authors": "user name",
+      "jira_artifact": "jirakey2",
+      "jira_title": "some jira title",
+      "jira_parent_artifact": "jirakey1",
+      "jira_type": "Sub-task",
+      "scope": "not in scope",
+      "jira_version": "18-02"
+    },
+    {
+      "id": 3,
+      "commits_revision": "1",
+      "repository_name": "stress",
+      "commits_message": "some commit title",
+      "commits_authors": "user name",
+      "jira_artifact": "jirakey2",
+      "jira_title": "some jira title",
+      "jira_parent_artifact": "jirakey1",
+      "jira_type": "Sub-task",
+      "scope": "not in scope",
+      "jira_version": "18-02"
+    }
+  ],
+  "releases": [
+    {
+      "id": 0,
+      "jira_version": "18-01",
+      "status": "in progress",
+      "description": "mont1 release",
+      "updated": 1528279872993
+    },
+    {
+      "id": 1,
+      "jira_version": "18-02",
+      "status": "complete",
+      "description": "mont1 release",
+      "updated": 1528279872993
+    },
+    {
+      "id": 2,
+      "jira_version": "18-03",
+      "status": "test",
+      "description": "mont1 release",
+      "updated": 1528279872993
+    },
+    {
+      "id": 3,
+      "jira_version": "18-04",
+      "status": "test",
+      "description": "mont1 release",
+      "updated": 1528279872993
+    },
+    {
+      "id": 4,
+      "jira_version": "18-05",
+      "status": "test",
+      "description": "mont1 release",
+      "updated": 1528279872993
+    }
+  ]
+}
